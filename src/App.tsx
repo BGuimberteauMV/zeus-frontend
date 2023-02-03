@@ -3,6 +3,7 @@ import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { BoltIcon } from '@heroicons/react/24/solid'
 import './App.css'
+import Application from './components/Application'
 import appSciences from './assets/images/app-sciences.jpg'
 import appNews from './assets/images/app-news.jpg'
 import appDocs from './assets/images/app-docs.jpg'
@@ -271,27 +272,7 @@ function App() {
                     <li
                       key={application.id}
                       className="col-span-1 flex flex-col divide-y divide-gray-200 rounded-lg bg-white text-center shadow">
-                      <div className="flex flex-1 flex-col p-8">
-                        <a href={application.href} className="focus:outline-none">
-                          <img className="mx-auto h-32 w-32 flex-shrink-0 rounded-full border-dotted border-2 border-amber-300" src={application.imageSrc} alt="" />
-                          <h3 className="mt-6 text-sm font-medium text-gray-900">{application.name}</h3>
-                          <dl className="mt-1 flex flex-grow flex-col justify-between">
-                            <dt className="sr-only">Description</dt>
-                            <dd className="text-sm text-gray-500">{application.description}</dd>
-                          </dl>
-                        </a>
-                      </div>
-                      <div>
-                        <div className="mt-3 -mt-px flex divide-x divide-gray-200">
-                          <div className="flex w-0 flex-1">
-                            <div className="relative -mr-px inline-flex w-0 flex-1 items-center justify-center rounded-bl-lg border border-transparent py-4 text-sm font-medium text-gray-700 hover:text-gray-500">
-                              <span className="rounded-full bg-green-100 px-2 py-1 text-xs font-medium text-green-800">
-                                {application.last_updated_at}
-                              </span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+                      <Application application={application} />
                     </li>
                   ))}
                 </ul>
