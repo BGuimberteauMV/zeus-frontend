@@ -16,7 +16,7 @@ const applications = [
     description:
       "Enrichissement des informations pour les maladies, vaccins, composants et autres domaine scientifique",
     imageSrc: appSciences,
-    href: "#",
+    href: "/sciences",
     last_updated_at: "Mise à jour il y a 3 heures",
   },
   {
@@ -24,7 +24,7 @@ const applications = [
     name: "Nouvelles",
     description: "Rédaction des nouvelles pour le grand public, les professionels de santé ou les deux",
     imageSrc: appNews,
-    href: "#",
+    href: "/news",
     last_updated_at: "Mise à jour il y a 2 jours",
   },
   {
