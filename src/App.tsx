@@ -94,7 +94,7 @@ function App() {
       <div className="min-h-full">
         <NavigationBar />
         <div className="py-10">
-          <TitleContent title="Applications" iconName="Squares2X2Icon" />
+          <TitleContent title="Applications" heroicIconName="Squares2X2Icon" />
           <main>
             <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
               {/* Replace with your content */}
