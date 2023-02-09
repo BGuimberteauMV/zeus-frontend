@@ -1,6 +1,6 @@
 import HeroIcon from "../components/HeroicIcon";
 
-function TitleContent({ title, heroicIconName }: { title: string; heroicIconName: string }) {
+function TitleContent({ title, heroicIconName }: { title: string; heroicIconName: any }) {
   return (
     <>
       <header>
