@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
-import HeroIcon from "../components/HeroicIcon";
+import { BoltIcon, XMarkIcon, Bars3Icon, BellIcon } from "@heroicons/react/24/solid";
 import { useLocation } from "react-router-dom";
 
 const navigation = [
@@ -37,8 +37,8 @@ function NavigationBar({}) {
               <div className="flex h-16 justify-between">
                 <div className="flex">
                   <div className="flex flex-shrink-0 items-center text-amber-300 font-mono text-2xl antialiased font-bold">
-                    <HeroIcon icon="BoltIcon" className="block h-8 w-auto lg:hidden" aria-hidden="true" />
-                    <HeroIcon icon="BoltIcon" className="hidden h-8 w-auto lg:block" aria-hidden="true" />
+                    <BoltIcon className="block h-8 w-auto lg:hidden" aria-hidden="true" />
+                    <BoltIcon className="hidden h-8 w-auto lg:block" aria-hidden="true" />
                     ZEUS
                   </div>
                   <div className="hidden sm:-my-px sm:ml-6 sm:flex sm:space-x-8">
@@ -65,7 +65,7 @@ function NavigationBar({}) {
                     className="rounded-full bg-white p-1 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                   >
                     <span className="sr-only">View notifications</span>
-                    <HeroIcon icon="BellIcon" className="h-6 w-6" aria-hidden="true" />
+                    <BellIcon className="h-6 w-6" aria-hidden="true" />
                   </button>
 
                   {/* Profile dropdown */}
@@ -110,9 +110,9 @@ function NavigationBar({}) {
                   <Disclosure.Button className="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
                     <span className="sr-only">Open main menu</span>
                     {open ? (
-                      <HeroIcon icon="XMarkIcon" className="block h-6 w-6" aria-hidden="true" />
+                      <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
                     ) : (
-                      <HeroIcon icon="Bars3Icon" className="block h-6 w-6" aria-hidden="true" />
+                      <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
                     )}
                   </Disclosure.Button>
                 </div>
@@ -152,7 +152,7 @@ function NavigationBar({}) {
                     className="ml-auto flex-shrink-0 rounded-full bg-white p-1 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                   >
                     <span className="sr-only">View notifications</span>
-                    <HeroIcon icon="BellIcon" className="h-6 w-6" aria-hidden="true" />
+                    <BellIcon className="h-6 w-6" aria-hidden="true" />
                   </button>
                 </div>
                 <div className="mt-3 space-y-1">
