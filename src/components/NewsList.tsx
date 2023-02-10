@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import TitleContent from "../layouts/TitleContent";
 import { NewspaperIcon, CheckBadgeIcon } from "@heroicons/react/24/solid";
 
@@ -83,6 +84,33 @@ const articles = [
     updated_at: "24/08/2009",
     published_at: "30/08/2009",
   },
+  {
+    id: 10,
+    status: "publish",
+    title: "Grippe A : 94 millions de doses de vaccin pour la France",
+    audience: "citizen",
+    site: "MesVaccins.net",
+    updated_at: "24/08/2009",
+    published_at: "30/08/2009",
+  },
+  {
+    id: 11,
+    status: "publish",
+    title: "Epidémie de choléra au Zimbabwe",
+    audience: "health_professional",
+    site: "MesVaccins.net",
+    updated_at: "24/08/2009",
+    published_at: "30/08/2009",
+  },
+  {
+    id: 12,
+    status: "review",
+    title: "Grippe A (H1N1): la Calédonie possible 'préfiguration' de l'épidémie en métropole, selon Bachelot",
+    audience: "both",
+    site: "MedecineDesVoyages.net",
+    updated_at: "24/08/2009",
+    published_at: "30/08/2009",
+  },
 ];
 
 function NewsList() {
@@ -108,12 +136,12 @@ function NewsList() {
           <TitleContent title="News" heroicIcon={<NewspaperIcon className="h-6 w-6" aria-hidden="true" />} />
         </div>
         <div className="mt-4 sm:mt-0 sm:ml-16 sm:flex-none">
-          <button
-            type="button"
+          <a
+            href="/news/new"
             className="inline-flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:w-auto"
           >
             Ajouter une nouvelle
-          </button>
+          </a>
         </div>
       </div>
       <div className="mt-8 flex flex-col">
@@ -153,16 +181,16 @@ function NewsList() {
                         {statusArticle(article.status === "publish")}
                       </td>
                       <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">
-                        {truncateString(article.title, 80)}
+                        {truncateString(article.title, 70)}
                       </td>
                       <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{article.audience}</td>
                       <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{article.site}</td>
                       <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{article.updated_at}</td>
                       <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{article.published_at}</td>
                       <td className="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
-                        <a href="#" className="text-indigo-600 hover:text-indigo-900">
-                          Edit<span className="sr-only">, {truncateString(article.title, 80)}</span>
-                        </a>
+                        <Link to={`/news/${article.id}/edit`} className="text-indigo-600 hover:text-indigo-900">
+                          Edit<span className="sr-only">, {truncateString(article.title, 70)}</span>
+                        </Link>
                       </td>
                     </tr>
                   ))}
