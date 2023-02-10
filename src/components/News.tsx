@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import TitleContent from "../layouts/TitleContent";
 import { NewspaperIcon } from "@heroicons/react/24/solid";
-import EditorJS from "@editorjs/editorjs";
+import { createReactEditorJS } from "react-editor-js";
 import Header from "@editorjs/header";
 import Quote from "@editorjs/quote";
 import Warning from "@editorjs/warning";
@@ -22,33 +22,56 @@ import Underline from "@editorjs/underline";
 // import LinkAutocomplete from "@editorjs/link-autocomplete";
 import TextVariantTune from "@editorjs/text-variant-tune";
 
+export const EDITOR_JS_TOOLS = {
+  header: Header,
+  quote: Quote,
+  warning: Warning,
+  delimiter: Delimiter,
+  list: List,
+  nested_list: NestedList,
+  checklist: Checklist,
+  image: Image,
+  // link: Link,
+  attaches: Attaches,
+  embed: Embed,
+  table: Table,
+  code: Code,
+  raw: Raw,
+  marker: Marker,
+  inline_code: InlineCode,
+  underline: Underline,
+  // link_autocomplete: LinkAutocomplete,
+  text_variant_tune: TextVariantTune,
+};
+
 function News() {
   let { newsId } = useParams();
   const title = newsId === undefined ? "Ajouter une nouvelle" : "Modifier une nouvelle";
-  new EditorJS({
-    placeholder: "Commencez à rédiger votre nouvelle",
-    tools: {
-      header: Header,
-      quote: Quote,
-      warning: Warning,
-      delimiter: Delimiter,
-      list: List,
-      nested_list: NestedList,
-      checklist: Checklist,
-      image: Image,
-      // link: Link,
-      attaches: Attaches,
-      embed: Embed,
-      table: Table,
-      code: Code,
-      raw: Raw,
-      marker: Marker,
-      inline_code: InlineCode,
-      underline: Underline,
-      // link_autocomplete: LinkAutocomplete,
-      text_variant_tune: TextVariantTune,
-    },
-  });
+  const ReactEditorJS = createReactEditorJS();
+  // const ReactEditorJS = new createReactEditorJS({
+  //   placeholder: "Commencez à rédiger votre nouvelle",
+  //   tools: {
+  //     header: Header,
+  //     quote: Quote,
+  //     warning: Warning,
+  //     delimiter: Delimiter,
+  //     list: List,
+  //     nested_list: NestedList,
+  //     checklist: Checklist,
+  //     image: Image,
+  //     // link: Link,
+  //     attaches: Attaches,
+  //     embed: Embed,
+  //     table: Table,
+  //     code: Code,
+  //     raw: Raw,
+  //     marker: Marker,
+  //     inline_code: InlineCode,
+  //     underline: Underline,
+  //     // link_autocomplete: LinkAutocomplete,
+  //     text_variant_tune: TextVariantTune,
+  //   },
+  // });
 
   return (
     <>
@@ -76,7 +99,9 @@ function News() {
                 <label htmlFor="content-address" className="block text-sm font-medium text-gray-700">
                   Contenu
                 </label>
-                <div id="editorjs" className="mt-1"></div>
+                <div className="mt-1">
+                  <ReactEditorJS tools={EDITOR_JS_TOOLS} />
+                </div>
               </div>
             </div>
           </div>
