@@ -1,21 +1,17 @@
 import "./App.css";
-import ApplicationList from "./components/ApplicationList";
-import NavigationBar from "./layouts/NavigationBar";
-import TitleContent from "./layouts/TitleContent";
+import { Navigate, Route, Routes, useSearchParams } from "react-router-dom";
+import Layout from "./layouts/Layout";
+import HomePage from "./components/HomePage";
+import SciencesList from "./components/SciencesList";
 
 function App() {
   return (
-    <>
-      <div className="min-h-full">
-        <NavigationBar />
-        <div className="py-10">
-          <TitleContent title="Applications" heroicIconName="Squares2X2Icon" />
-          <main>
-            <ApplicationList />
-          </main>
-        </div>
-      </div>
-    </>
+    <Routes>
+      <Route element={<Layout />}>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/sciences" element={<SciencesList />} />
+      </Route>
+    </Routes>
   );
 }
 
