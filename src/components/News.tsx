@@ -47,7 +47,7 @@ export const EDITOR_JS_TOOLS = {
 function News() {
   let { newsId } = useParams();
   const title = newsId === undefined ? "Ajouter une nouvelle" : "Modifier une nouvelle";
-  const ReactEditorJS = new EditorJS({
+  new EditorJS({
     placeholder: "Commencez à rédiger votre nouvelle",
     tools: EDITOR_JS_TOOLS,
   });
