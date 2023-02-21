@@ -5,7 +5,7 @@
 .app::before {
   z-index: -100000;
   content: "";
-  background-image: url('./assets/images/background.png');
+  background-image: url("./assets/images/background.png");
   background-size: contain;
   position: absolute;
   top: 0px;
@@ -15,4 +15,26 @@
   background-position: center;
   background-repeat: no-repeat;
   opacity: 0.5;
+}
+
+/* .ce-block__content {
+  background-color: rgba(252, 211, 77, 0.15);
+  &:first-child {
+    border-top: 1px solid rgba(252, 211, 77, 0.5);
+  }
+} */
+
+.ce-block__content,
+.ce-toolbar__content {
+  max-width: calc(100% - 80px) !important;
+}
+.cdx-block {
+  max-width: 100% !important;
+}
+
+h1.ce-header {
+  @apply text-2xl;
+}
+h2.ce-header {
+  @apply text-xl;
 }
